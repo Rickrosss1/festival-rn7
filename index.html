@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://cdnc.heyzine.com">
 <link rel="canonical" href="https://heyzine.com/flip-book/ce29eaf7ca.html">
-
+<div id="flipbookContainer">
 <title>Festival RN7 | Booking</title>
 <meta itemprop="name" content="Festival RN7 | PDF to Flipbook">
 <meta itemprop="description" content="Created with the Heyzine flipbook maker">
@@ -435,12 +435,34 @@
         });
     </script> 
     
- 
+ <script>
+  function resizeFlipbook() {
+    const container = document.getElementById('flipbookContainer');
+    if (!container) return;
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    if (width <= 480) {
+      container.style.width = width + 'px';
+      container.style.height = (height * 0.8) + 'px';
+    } else if (width <= 1024) {
+      container.style.width = (width * 0.9) + 'px';
+      container.style.height = (height * 0.9) + 'px';
+    } else {
+      container.style.width = (width * 0.8) + 'px';
+      container.style.height = (height * 0.85) + 'px';
+    }
+  }
+
+  window.addEventListener('load', resizeFlipbook);
+  window.addEventListener('resize', resizeFlipbook);
+</script>
 
 
    
 
-    
+    </div>
     
                                 
                     <script defer="" data-domain="heyzine-flipbook" src="https://hzstats.com/js/spl.js"></script>
